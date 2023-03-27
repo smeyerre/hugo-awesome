@@ -9,7 +9,7 @@
             <main aria-label="Content">
                 <h3 class="posts-item-note" aria-label="Recent Posts">Recent Posts</h3>
                 {{/* Show last 5 posts in reverse date order */}}
-                {{ $posts := .Site.RegularPages.ByDate.Reverse }}
+                {{ $posts := where .Site.RegularPages.ByDate.Reverse "Type" "posts" }}
                 {{ range first 5 $posts }}
                 {{ partial "postCard" . }}
                 {{ end }}
