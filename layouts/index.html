@@ -12,7 +12,8 @@
 
                 <!-- {{ $posts := where .Site.RegularPages.ByDate.Reverse "Type" "posts" }} -->
                 {{ $allPosts := where .Site.RegularPages "Type" "posts" }}
-                {{ $aboutPage := where .Site.RegularPages "RelPermalink" "/about/" }}
+                <!-- {{ $aboutPage := where .Site.RegularPages "RelPermalink" "/about/" }} -->
+                {{ $aboutPage := where .Site.RegularPages "RelPermalink" "/about.html" }}
                 {{ $pagesToShow := union $allPosts $aboutPage }}
                 {{ $posts := $pagesToShow.ByDate.Reverse }}
 
